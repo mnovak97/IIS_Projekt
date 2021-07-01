@@ -1,0 +1,37 @@
+<element name="kupac"  datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" xmlns="http://relaxng.org/ns/structure/1.0" ns="http://schemas.datacontract.org/2004/07/RestApiProjekt.Models">
+	<oneOrMore>
+		<element name="Ime">
+			<text/>
+		</element>
+		<grammar>
+			<start>
+				<element name="Email">
+					<ref name = "emailString"/>
+				</element>
+			</start>
+			<define name="emailString">
+				<data type="string">
+					<param name ="pattern">[^@]+@[^\.]+\..+</param> 
+				</data>
+			</define>	
+		</grammar>
+		<element name="BrojMobitela">
+			<text/>
+		</element>
+		<element name = "Adresa">
+			<text/>
+		</element>
+		<grammar>
+			<start>
+				<element name = "OIB">
+					<ref name= "OIBString"/>
+				</element>
+			</start>
+			<define name="OIBString">
+				<data type="string">
+					<param name="pattern">[0-9]{11}</param>
+				</data>
+			</define>
+		</grammar>
+	</oneOrMore>
+</element>
