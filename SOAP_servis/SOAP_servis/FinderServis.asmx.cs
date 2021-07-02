@@ -48,6 +48,7 @@ namespace SOAP_servis
                 child.AppendChild(oib);
                 root.AppendChild(child);
             }
+            xmlDoc.Save("D:\\Documents\\GitHub\\IIS_Projekt\\SOAP_servis\\SOAP_servis\\Kupci.xml");
         }
         [WebMethod]
         public string Find(string word)

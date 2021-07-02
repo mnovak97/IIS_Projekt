@@ -1,0 +1,16 @@
+<Kupci>
+  <Kupac>
+    <Ime>Martin</Ime>
+    <Email>ipad3monkey@gmail.com</Email>
+    <BrojMobitela>0919158566</BrojMobitela>
+    <Adresa>Gornji Bukovac 96</Adresa>
+    <OIB>12345678941</OIB>
+  </Kupac>
+  <Kupac>
+    <Ime>Marko</Ime>
+    <Email>marko@gmail.com</Email>
+    <BrojMobitela>0994569874</BrojMobitela>
+    <Adresa>Ilica 242</Adresa>
+    <OIB>45621478963</OIB>
+  </Kupac>
+</Kupci>
