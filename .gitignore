@@ -363,3 +363,5 @@ MigrationBackup/
 FodyWeavers.xsd
 /JAXB/nbproject/private/
 /JAXB/build/
+/XML-RPC/nbproject/private/
+/XML-RPC/build/
