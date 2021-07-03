@@ -7,6 +7,7 @@ using System.Xml.Schema;
 using System.Runtime.Serialization;
 using System.IO;
 using Commons.Xml.Relaxng;
+using Microsoft.AspNetCore.Authorization;
 
 namespace RestApiProjekt.Controllers
 {
@@ -14,12 +15,14 @@ namespace RestApiProjekt.Controllers
     [ApiController]
     public class KupacController : ControllerBase
     {
+        [Authorize]
         public List<Kupac> Get()
         {
             return Startup.PopisKupaca;
         }
 
         private bool error = false;
+
 
         [HttpPost("xml")]
         public void PostXMl(XmlElement xmlKupac)
