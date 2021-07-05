@@ -15,7 +15,7 @@ namespace RestApiProjekt.Controllers
     [ApiController]
     public class KupacController : ControllerBase
     {
-        [Authorize]
+        
         public List<Kupac> Get()
         {
             return Startup.PopisKupaca;
@@ -23,8 +23,8 @@ namespace RestApiProjekt.Controllers
 
         private bool error = false;
 
-
-        [HttpPost("xml")]
+        [Authorize]
+        [HttpPost("xsd")]
         public void PostXMl(XmlElement xmlKupac)
         {
             try
@@ -55,7 +55,7 @@ namespace RestApiProjekt.Controllers
                 Response.StatusCode = StatusCodes.Status400BadRequest;
             }
         }
-
+        [Authorize]
         [HttpPost("rng")]
         public void PostRng(XmlElement xmlKupac)
         {

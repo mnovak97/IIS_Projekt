@@ -50,9 +50,9 @@ namespace RestApiProjekt.Controllers
         {
             UserModel user = null;
 
-            if (login.Username =="Martin")
+            if (login.Username =="Martin" && login.Password =="martin123")
             {
-                user = new UserModel { Username = "Martin", Email = "ipad3monkey@gmail.com" };
+                user = new UserModel (login.Username,login.Password);
             }
             return user;
         }
