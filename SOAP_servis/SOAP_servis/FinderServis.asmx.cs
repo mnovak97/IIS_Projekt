@@ -51,11 +51,11 @@ namespace SOAP_servis
             xmlDoc.Save("D:\\Documents\\GitHub\\IIS_Projekt\\SOAP_servis\\SOAP_servis\\Kupci.xml");
         }
         [WebMethod]
-        public string Find(string word)
+        public XmlNode Find(string word)
         {
             XmlNode kupac = xmlDoc.SelectSingleNode("/Kupci/Kupac[Ime='"+word+"']");
 
-            return kupac.InnerText.ToString();
+            return kupac;
 
         }
     }

@@ -5,8 +5,9 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KlijentskaApp.Model
+namespace ClientApp.Model
 {
+
     [DataContract(Namespace = "http://schemas.datacontract.org/2004/07/RestApiProjekt.Models")]
     class Kupac
     {
@@ -34,5 +35,4 @@ namespace KlijentskaApp.Model
 
         }
     }
-
 }

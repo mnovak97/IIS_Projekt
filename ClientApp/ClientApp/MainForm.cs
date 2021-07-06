@@ -8,22 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace KlijentskaApp
+namespace ClientApp
 {
-    public partial class Main : Form
+    public partial class MainForm : Form
     {
-
         private string token;
-        public Main(string JWTToken)
+
+        public MainForm(string JWTtoken)
         {
             InitializeComponent();
-            token = JWTToken;
+            token = JWTtoken;
         }
 
         private void btnXSD_Click(object sender, EventArgs e)
         {
             XSDValidacija form = new XSDValidacija(token);
             form.Show();
+
         }
 
         private void btnRNG_Click(object sender, EventArgs e)
@@ -31,12 +32,18 @@ namespace KlijentskaApp
 
         }
 
-        private void btnPretrazivanje_Click(object sender, EventArgs e)
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            SOAP_Pretrazivanje form = new SOAP_Pretrazivanje();
+            form.Show();
+        }
+
+        private void btnTemperatura_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btnTemperatura_Click(object sender, EventArgs e)
+        private void btnJAXB_Click(object sender, EventArgs e)
         {
 
         }

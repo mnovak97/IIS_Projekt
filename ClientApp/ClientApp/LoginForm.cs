@@ -1,20 +1,26 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Net;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Text.Json;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
-namespace KlijentskaApp
+namespace ClientApp
 {
-    public partial class Login : Form
+    public partial class LoginForm : Form
     {
         private string token;
 
-        public Login()
+        public LoginForm()
         {
             InitializeComponent();
+            
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -29,7 +35,7 @@ namespace KlijentskaApp
                 using (var streamWriter = new StreamWriter(webRequest.GetRequestStream()))
                 {
                     string json = "{\"username\":\"" + txtUsername.Text + "\"," +
-                      "\"password\":\"" + txtPasword.Text + "\"}";
+                      "\"password\":\"" + txtPassword.Text + "\"}";
                     streamWriter.Write(json);
                 }
 
@@ -44,7 +50,7 @@ namespace KlijentskaApp
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
                     this.Hide();
-                    Main mainForm = new Main(token);
+                    MainForm mainForm = new MainForm(token);
                     mainForm.FormClosed += (s, args) => this.Close();
                     mainForm.Show();
                 }
@@ -53,9 +59,6 @@ namespace KlijentskaApp
             {
                 MessageBox.Show("Invalid username or password");
             }
-
-          
-            
         }
     }
 }

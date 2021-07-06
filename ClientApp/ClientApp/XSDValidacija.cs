@@ -1,4 +1,4 @@
-﻿using KlijentskaApp.Model;
+﻿using ClientApp.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,14 +13,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 
-namespace KlijentskaApp
+namespace ClientApp
 {
     public partial class XSDValidacija : Form
     {
-        string token;
+        private string token;
         public XSDValidacija(string JWTtoken)
         {
             InitializeComponent();
+
             token = JWTtoken;
         }
 
