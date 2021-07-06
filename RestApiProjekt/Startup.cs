@@ -20,15 +20,11 @@ namespace RestApiProjekt
     public class Startup
     {
         internal static List<Kupac> PopisKupaca;
-        internal static List<Korisnik> PopisKorisnika;
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
             PopisKupaca = new List<Kupac>();
-            PopisKorisnika = new List<Korisnik>();
             Kupac kupac = new Kupac("Martin", "ipad3monkey@gmail.com", "0919158566", "Gornji Bukovac 96", "12345678941");
-            Korisnik admin = new Korisnik("Admin", "Dovla", "lozinka123");
-            PopisKorisnika.Add(admin);
             PopisKupaca.Add(kupac);
 
         }

@@ -1,4 +1,4 @@
-<element name="kupac"  datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" xmlns="http://relaxng.org/ns/structure/1.0" ns="http://schemas.datacontract.org/2004/07/RestApiProjekt.Models">
+<element name="Kupac"  datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" xmlns="http://relaxng.org/ns/structure/1.0" ns="http://schemas.datacontract.org/2004/07/RestApiProjekt.Models">
 	<oneOrMore>
 		<element name="Ime">
 			<text/>

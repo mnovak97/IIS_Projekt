@@ -21,6 +21,8 @@ public class XMLRPC {
         
         
         server.start();
+        
+        System.out.println("Server ready");
     }
     
 }

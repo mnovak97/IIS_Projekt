@@ -8,6 +8,9 @@ using System.Runtime.Serialization;
 using System.IO;
 using Commons.Xml.Relaxng;
 using Microsoft.AspNetCore.Authorization;
+using System.Xml.Linq;
+using System;
+using System.Xml.Serialization;
 
 namespace RestApiProjekt.Controllers
 {
@@ -75,9 +78,7 @@ namespace RestApiProjekt.Controllers
                     {
                         reader.Read();
                     }
-                    DataContractSerializer deserializer = new DataContractSerializer(typeof(Kupac));
-                    Kupac noviKupac = (Kupac)deserializer.ReadObject(xmlStream);
-                    Startup.PopisKupaca.Add(noviKupac);
+                    Startup.PopisKupaca.Add(kreairajKupca(xmlDoc));
                 }
                 catch
                 {
@@ -85,6 +86,18 @@ namespace RestApiProjekt.Controllers
                     Response.StatusCode = StatusCodes.Status400BadRequest;
                 }
             }
+        }
+
+        private Kupac kreairajKupca(XmlDocument xmlDoc)
+        {
+            Kupac noviKupac = new Kupac();
+            noviKupac.Ime = xmlDoc.DocumentElement.ChildNodes[0].InnerText;
+            noviKupac.Email = xmlDoc.DocumentElement.ChildNodes[1].InnerText;
+            noviKupac.BrojMobitela = xmlDoc.DocumentElement.ChildNodes[2].InnerText;
+            noviKupac.Adresa = xmlDoc.DocumentElement.ChildNodes[3].InnerText;
+            noviKupac.OIB = xmlDoc.DocumentElement.ChildNodes[4].InnerText;
+
+            return noviKupac;
         }
 
         private void XmlValidacija(object sender, ValidationEventArgs e)

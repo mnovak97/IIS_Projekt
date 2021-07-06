@@ -33,7 +33,6 @@ namespace ClientApp
             this.btnRNG = new System.Windows.Forms.Button();
             this.btnFind = new System.Windows.Forms.Button();
             this.btnTemperatura = new System.Windows.Forms.Button();
-            this.btnJAXB = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnXSD
@@ -76,22 +75,11 @@ namespace ClientApp
             this.btnTemperatura.UseVisualStyleBackColor = true;
             this.btnTemperatura.Click += new System.EventHandler(this.btnTemperatura_Click);
             // 
-            // btnJAXB
-            // 
-            this.btnJAXB.Location = new System.Drawing.Point(327, 263);
-            this.btnJAXB.Name = "btnJAXB";
-            this.btnJAXB.Size = new System.Drawing.Size(126, 23);
-            this.btnJAXB.TabIndex = 4;
-            this.btnJAXB.Text = "JAXB";
-            this.btnJAXB.UseVisualStyleBackColor = true;
-            this.btnJAXB.Click += new System.EventHandler(this.btnJAXB_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnJAXB);
             this.Controls.Add(this.btnTemperatura);
             this.Controls.Add(this.btnFind);
             this.Controls.Add(this.btnRNG);
@@ -108,6 +96,5 @@ namespace ClientApp
         private System.Windows.Forms.Button btnRNG;
         private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.Button btnTemperatura;
-        private System.Windows.Forms.Button btnJAXB;
     }
 }

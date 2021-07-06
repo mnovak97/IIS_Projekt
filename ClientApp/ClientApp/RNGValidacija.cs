@@ -15,17 +15,16 @@ using System.Xml;
 
 namespace ClientApp
 {
-    public partial class XSDValidacija : Form
+    public partial class RNGValidacija : Form
     {
         private string token;
-        public XSDValidacija(string JWTtoken)
+        public RNGValidacija(string JWTtoken)
         {
             InitializeComponent();
-
             token = JWTtoken;
         }
 
-        private void btnDodaj_Click(object sender, EventArgs e)
+        private void btnRNG_Click(object sender, EventArgs e)
         {
             Kupac noviKupac = new Kupac(txtIme.Text, txtEmail.Text, txtBrojMobitela.Text, txtAdresa.Text, txtOIB.Text);
             DataContractSerializer serializer = new DataContractSerializer(typeof(Kupac));
@@ -38,7 +37,7 @@ namespace ClientApp
 
             try
             {
-                HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://localhost:5000/api/Kupac/xsd");
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://localhost:5000/api/Kupac/rng");
                 request.Method = "POST";
                 request.Accept = "application/xml";
                 request.ContentType = "application/xml";
@@ -57,7 +56,7 @@ namespace ClientApp
             catch (Exception ex)
             {
 
-                MessageBox.Show("Validacija nije prošla");
+                MessageBox.Show("Validacija nije prošla!");
             }
         }
     }

@@ -38,14 +38,23 @@ public class JAXB {
             Kupci kupac = (Kupci) jaxbUnmarshaller.unmarshal(new File(xmlFile));
             List<Kupac> kupci = kupac.getKupac();
             for(Kupac kup : kupci){
-                System.out.println(kup.getIme());
+                printKupac(kup);
             }
-            
+            System.out.println("XML valid!");
         }
         catch(JAXBException |SAXException e)
         {
-            e.printStackTrace();
+            System.out.println("XML is not valid!");
         }
+    }
+
+    private static void printKupac(Kupac kup) {
+        System.out.println("Ime: "+kup.getIme());
+        System.out.println("Email: "+kup.getEmail());
+        System.out.println("Broj mobitela: "+kup.getBrojMobitela());
+        System.out.println("Adresa: "+kup.getAdresa());
+        System.out.println("OIB: "+ kup.getOIB());
+        System.out.println("------------------");
     }
 
    

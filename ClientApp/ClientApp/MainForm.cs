@@ -29,7 +29,8 @@ namespace ClientApp
 
         private void btnRNG_Click(object sender, EventArgs e)
         {
-
+            RNGValidacija form = new RNGValidacija(token);
+            form.Show();
         }
 
         private void btnFind_Click(object sender, EventArgs e)
@@ -40,12 +41,8 @@ namespace ClientApp
 
         private void btnTemperatura_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnJAXB_Click(object sender, EventArgs e)
-        {
-
+            Temperatura form = new Temperatura();
+            form.Show();
         }
     }
 }
