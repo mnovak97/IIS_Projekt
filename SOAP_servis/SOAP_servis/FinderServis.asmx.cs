@@ -56,7 +56,6 @@ namespace SOAP_servis
             XmlNode kupac = xmlDoc.SelectSingleNode("/Kupci/Kupac[Ime='"+word+"']");
 
             return kupac;
-
         }
     }
 }
